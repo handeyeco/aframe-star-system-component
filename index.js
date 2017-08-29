@@ -1,12 +1,12 @@
 /*
-* ~ SCHEMA ~
-*  color       <String>: color of the stars
-*  radius      <Number>: distance from center of sphere to first star sphere
-*  depth       <Number>: distance between star spheres
-*  size        <Number>: size of each individual star
-*  count       <Number>: number of stars per star sphere
-*  texture     <Asset>:  sprite used for individual stars
-*/
+ * ~ SCHEMA ~
+ *  color       <String>: color of the stars
+ *  radius      <Number>: distance from center of sphere to first star sphere
+ *  depth       <Number>: distance between star spheres
+ *  size        <Number>: size of each individual star
+ *  count       <Number>: number of stars per star sphere
+ *  texture     <Asset>:  sprite used for individual stars
+ */
 
 AFRAME.registerComponent('star-system', {
   schema: {
@@ -62,7 +62,11 @@ AFRAME.registerComponent('star-system', {
     }));
 
     // Add the star particles to the element
-    this.el.setObject3D('particle-system', new THREE.Points(stars, starMaterial));
+    this.el.setObject3D('star-system', new THREE.Points(stars, starMaterial));
+  },
+
+  remove: function() {
+    this.el.removeObject3D('star-system');
   },
 
   // Returns a random vector between the inner sphere

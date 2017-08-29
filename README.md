@@ -1,5 +1,7 @@
 # Quick way to add stars to your A-Frame project
 
+![screenshot](./screenshot.png "Screenshot")
+
 * [Basic Usage](#basic-usage)
 * [Demo](#demo)
 * [Properties](#properties)
