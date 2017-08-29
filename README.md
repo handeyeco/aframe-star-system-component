@@ -5,6 +5,7 @@
 * [Basic Usage](#basic-usage)
 * [Demo](#demo)
 * [Properties](#properties)
+* [Random Links](#random-links)
 
 ## Basic Usage
 
@@ -84,3 +85,8 @@ The way this works is it creates a bunch of particles (stars) in THREE. The part
 | size        | Number | 1       | Size of each individual star                        |
 | count       | Number | 10000   | Number of total stars created                       |
 | texture     | Asset  | ''      | Sprite used for individual stars (ex: PNG image)    |
+
+## Random Links
+
+* [Star-System on NPM](https://www.npmjs.com/package/aframe-star-system-component)
+* [I'm looking for a job](http://matthewbryancurtis.com/)
