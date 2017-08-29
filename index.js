@@ -3,9 +3,8 @@
 *  color       <String>: color of the stars
 *  radius      <Number>: distance from center of sphere to first star sphere
 *  depth       <Number>: distance between star spheres
-*  starSize    <Number>: size of each individual star
-*  starCount   <Number>: number of stars per star sphere
-*  sphereCount <Number>: number of star spheres
+*  size        <Number>: size of each individual star
+*  count       <Number>: number of stars per star sphere
 *  texture     <Asset>:  sprite used for individual stars
 */
 
@@ -25,7 +24,7 @@ AFRAME.registerComponent('star-system', {
       default: 300,
       min: 0,
     },
-    starSize: {
+    size: {
       type: 'number',
       default: 1,
       min: 0,
@@ -59,7 +58,7 @@ AFRAME.registerComponent('star-system', {
     // Set the star display options
     const starMaterial = new THREE.PointsMaterial(Object.assign(texture, {
       color: this.data.color,
-      size: this.data.starSize
+      size: this.data.size
     }));
 
     // Add the star particles to the element
