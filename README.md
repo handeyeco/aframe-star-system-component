@@ -66,7 +66,7 @@ Demo code:
 
 ## Properties
 
-The way this works is it creates a bunch of particles (stars) in THREE. It creates several star spheres around a a central point (where the star-system is positioned); each sphere has starCount stars. You can set the distance from the central point and the distance between spheres. You can also load a custom sprite to replace the squares that THREE.PointsMaterial() makes.
+The way this works is it creates a bunch of particles (stars) in THREE. It creates several star spheres around a central point (where the star-system is positioned); each sphere has starCount number of stars. You can set the distance from the central point and the distance between spheres. You can also load a custom sprite to replace the squares that THREE.PointsMaterial() makes.
 
 | Property    | Type   | Default | Description                                         |
 |-------------|--------|---------|-----------------------------------------------------|
