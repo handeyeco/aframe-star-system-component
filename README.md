@@ -27,13 +27,13 @@ Getting started is easy, just import A-Frame and Star-System:
 If things get bogged down, you may try less particles (stars):
 
 ``` html
-<a-entity star-system="starCount: 1000; sphereCount: 1"></a-entity>
+<a-entity star-system="count: 1000; radius: 250; depth: 0"></a-entity>
 ```
 
 But you also might want to try more:
 
 ``` html
-<a-entity star-system="starCount: 10000; sphereCount: 10; radius: 250"></a-entity>
+<a-entity star-system="count: 100000"></a-entity>
 ```
 
 Or offset the sphere of stars:
@@ -66,14 +66,13 @@ Demo code:
 
 ## Properties
 
-The way this works is it creates a bunch of particles (stars) in THREE. It creates several star spheres around a central point (where the star-system is positioned); each sphere has starCount number of stars. You can set the distance from the central point and the distance between spheres. You can also load a custom sprite to replace the squares that THREE.PointsMaterial() makes.
+The way this works is it creates a bunch of particles (stars) in THREE. The particles are randomly placed between two spheres: sphere of radius 'radius' and sphere of radius 'radius + depth'. You can also load a custom sprite to replace the squares that THREE.PointsMaterial() makes.
 
 | Property    | Type   | Default | Description                                         |
 |-------------|--------|---------|-----------------------------------------------------|
 | color       | String | '#FFF'  | Color of the star particles                         |
 | radius      | Number | 300     | Distance from center of sphere to first star sphere |
-| depth       | Number | 100     | Distance between star spheres                       |
+| depth       | Number | 300     | Distance between star spheres                       |
 | starSize    | Number | 1       | Size of each individual star                        |
-| starCount   | Number | 3000    | Number of stars per star sphere                     |
-| sphereCount | Number | 3       | Number of star spheres                              |
+| count       | Number | 10000   | Number of total stars created                       |
 | texture     | Asset  | ''      | Sprite used for individual stars (ex: PNG image)    |

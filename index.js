@@ -17,23 +17,23 @@ AFRAME.registerComponent('star-system', {
     },
     radius: {
       type: 'number',
-      default: 300
+      default: 300,
+      min: 0,
     },
     depth: {
       type: 'number',
-      default: 100
+      default: 300,
+      min: 0,
     },
     starSize: {
       type: 'number',
-      default: 1
+      default: 1,
+      min: 0,
     },
-    starCount: {
+    count: {
       type: 'number',
-      default: 3000
-    },
-    sphereCount: {
-      type: 'number',
-      default: 3
+      default: 10000,
+      min: 0,
     },
     texture: {
       type: 'asset',
@@ -51,12 +51,9 @@ AFRAME.registerComponent('star-system', {
 
     const stars = new THREE.Geometry();
 
-    // Create i * j stars
-    // where i is the number of stars per sphere and j is the number of spheres
-    for (let i = 0; i < this.data.starCount; i++) {
-      for (let j = 0; j < this.data.sphereCount; j++) {
-        stars.vertices.push(new THREE.Vector3(...this.randomSpherePoint(this.data.radius + this.data.depth * j)))
-      }
+    // Randomly create the vertices for the stars
+    while (stars.vertices.length < this.data.count) {
+        stars.vertices.push(this.randomVectorBetweenSpheres(this.data.radius, this.data.depth));
     }
 
     // Set the star display options
@@ -69,13 +66,20 @@ AFRAME.registerComponent('star-system', {
     this.el.setObject3D('particle-system', new THREE.Points(stars, starMaterial));
   },
 
-  // Helper function to randomly place stars on spheres
-  randomSpherePoint: function(radius) {
+  // Returns a random vector between the inner sphere
+  // and the outer sphere created with radius + depth
+  randomVectorBetweenSpheres: function(radius, depth) {
+    const randomRadius = Math.floor(Math.random() * (radius + depth - radius + 1) + radius);
+    return this.randomSphereSurfaceVector(randomRadius);
+  },
+
+  // Returns a vector on the face of sphere with given radius
+  randomSphereSurfaceVector: function(radius) {
     const theta = 2 * Math.PI * Math.random();
     const phi = Math.acos(2 * Math.random() - 1);
     const x = radius * Math.sin(phi) * Math.cos(theta);
     const y = radius * Math.sin(phi) * Math.sin(theta);
     const z = radius * Math.cos(phi);
-    return [x, y, z];
+    return new THREE.Vector3(x, y, z);
   }
 });
