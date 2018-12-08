@@ -16,7 +16,7 @@ Getting started is easy, just import A-Frame and Star-System:
 <html>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
-    <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/matthewbryancurtis/aframe-star-system-component@db4f1030/index.js"></script>
 </head>
 <body>
     <a-scene>
@@ -48,7 +48,7 @@ Or offset the sphere of stars:
 If for some reason square stars bother you, you can use a custom image to replace the stars:
 
 ``` html
-<a-entity star-system="texture: https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/master/assets/star.svg"></a-entity>
+<a-entity star-system="texture: https://cdn.jsdelivr.net/gh/matthewbryancurtis/aframe-star-system-component@master/assets/star.svg"></a-entity>
 ```
 
 # Demo
@@ -62,7 +62,7 @@ Demo code:
 <html>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.js"></script>
-    <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/matthewbryancurtis/aframe-star-system-component@db4f1030/index.js"></script>
 </head>
 <body>
     <a-scene>
