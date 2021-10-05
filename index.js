@@ -48,12 +48,12 @@ AFRAME.registerComponent('star-system', {
       texture.map = new THREE.TextureLoader().load(this.data.texture);
     }
 
-    const stars = new THREE.Geometry();
-
     // Randomly create the vertices for the stars
-    while (stars.vertices.length < this.data.count) {
-        stars.vertices.push(this.randomVectorBetweenSpheres(this.data.radius, this.data.depth));
+    const points = [];
+    while (points.length < this.data.count) {
+        points.push(this.randomVectorBetweenSpheres(this.data.radius, this.data.depth));
     }
+    const stars = new THREE.BufferGeometry().setFromPoints(points);
 
     // Set the star display options
     const starMaterial = new THREE.PointsMaterial(Object.assign(texture, {
